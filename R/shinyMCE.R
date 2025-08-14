@@ -16,7 +16,7 @@
 #' @export
 tinyMCE <- function(inputId, content, options = NULL){
   tagList(
-    singleton(tags$head(tags$script(src ="/usr/local/lib/node_modules/tinymce/tinymce.min.js", referrerpolicy="origin", crossorigin="anonymous"))),
+    singleton(tags$head(tags$script(src ="tinymce/tinymce.min.js", referrerpolicy="origin", crossorigin="anonymous"))),
     tags$div(id = inputId, class = "shinytinymce", content, style = "resize: none; width: 100%; height: 100%; border-style: none; background: gainsboro;"),
     tags$script(paste0('tinymce.init({selector:".shinytinymce", license_key: "gpl", ', options, '});')),
     singleton(tags$head(tags$script(src = 'shinyMCE/shiny-tinymce-bindings.js')))
